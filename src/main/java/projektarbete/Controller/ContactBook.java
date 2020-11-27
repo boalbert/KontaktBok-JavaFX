@@ -1,6 +1,8 @@
 package projektarbete.Controller;
 
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import projektarbete.Model.Contact;
 import projektarbete.Model.WorkContact;
 
 import java.util.HashMap;
@@ -8,6 +10,46 @@ import java.util.HashMap;
 public class ContactBook {
 
     public static HashMap<String, WorkContact> workContactHashMap = new HashMap<>();//load json-file
+
+    public static void removeContact(String key)  {
+        workContactHashMap.remove(key);
+    }
+
+    public static void updateContactBook(int choice, String key, String change)  {
+        switch (choice) {
+            case 1 : {
+                workContactHashMap.get(key).setCompany(change);
+                break;
+            }
+            case 2 : {
+                workContactHashMap.get(key).setTitle(change);
+                break;
+            }
+            case 3 : {
+                workContactHashMap.get(key).setJobPhoneNumber(change);
+                break;
+            }
+            case 4 : {
+                workContactHashMap.get(key).setFirstName(change);
+                break;
+            }
+            case 5 : {
+                workContactHashMap.get(key).setLastName(change);
+                break;
+            }
+            case 6 : {
+                workContactHashMap.get(key).setPhoneNumber(change);
+                break;
+            }
+            case 7 : {
+                workContactHashMap.get(key).setEmail(change);
+                break;
+            }
+            case 8 : {
+                return;
+            }
+        }
+    }
 
     public static void printContactBook(){
         workContactHashMap.forEach((key, value) -> System.out.println("\n" +
@@ -36,6 +78,10 @@ public class ContactBook {
         addWorkContactToContactBook("Joakim","liden","0876","joakim@test.com","DontKnow","teamleader","44234");
         addWorkContactToContactBook("Casper","ckokealot","93837","ckokealot@choke.se","Hell Production","stagehand","8765453");
 
+        printContactBook();
+        updateContactBook(7,"Casper","XXXXX");
+        printContactBook();
+        removeContact("Albert");
         printContactBook();
 
     }
