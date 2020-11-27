@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import projektarbete.Model.WorkContact;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -22,7 +23,7 @@ public class ioHandling {
 
         try (FileReader fileReader = new FileReader("src/main/java/projektarbete/data/workcontacs.json")) {
 
-            // Load HashMapp from FileReader via Gson, we use Type parameter to specify what data we're loading
+            // Load HashMap from FileReader via Gson, we use Type parameter to specify what data we're loading
             HashMap<String, WorkContact> loadedWorkContacts = gson.fromJson(fileReader, typeHashMap);
 
             if (null == typeHashMap) {
@@ -37,5 +38,19 @@ public class ioHandling {
         }
 
         return new HashMap<>();
+    }
+
+    public void saveHashMapToJson(HashMap<String, WorkContact> saveHashMap) {
+
+        try(FileWriter fileWriter = new FileWriter("src/main/java/projektarbete/data/workcontacs.json")) {
+
+
+            gson.toJson(saveHashMap,fileWriter);
+            System.out.println("Writing updated HashMap to .json.");
+
+        } catch(IOException e) {
+            System.out.println("Writing to .json failed: ");
+            e.printStackTrace();
+        }
     }
 }
