@@ -21,7 +21,7 @@ public class ioHandling {
      * @return HashMap populated from .json-file.
      */
     public static HashMap<String, WorkContact> loadHashMapFromJson() {
-        System.out.println("Trying to populate HashMap from .json-file.");
+        System.out.println("Trying to populate HashMap from .json-file...");
 
         Type typeHashMap = new TypeToken<HashMap<String, WorkContact>>() {
         }.getType();
@@ -32,11 +32,11 @@ public class ioHandling {
             HashMap<String, WorkContact> loadedWorkContacts = gson.fromJson(fileReader, typeHashMap);
 
             if (null == typeHashMap) {
-                System.out.println(".json-file was empty, returning an empty ArrayList.");
+                System.out.println(".json-file was empty, returning an empty HashMap.");
                 loadedWorkContacts = new HashMap<>();
             }
 
-            System.out.println("Returning populated HashMap");
+            System.out.println("Success! Returning populated HashMap.");
             return loadedWorkContacts;
         } catch (IOException e) {
             e.printStackTrace();
