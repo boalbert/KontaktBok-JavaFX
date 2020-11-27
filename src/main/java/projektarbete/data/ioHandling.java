@@ -13,9 +13,14 @@ import java.util.HashMap;
 
 public class ioHandling {
 
-    private final static Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    public HashMap<String, WorkContact> loadHashMapFromJson() {
+    /**
+     * Should execute when we start the program
+     *
+     * @return HashMap populated from .json-file.
+     */
+    public static HashMap<String, WorkContact> loadHashMapFromJson() {
         System.out.println("Trying to populate HashMap from .json-file.");
 
         Type typeHashMap = new TypeToken<HashMap<String, WorkContact>>() {
@@ -40,15 +45,21 @@ public class ioHandling {
         return new HashMap<>();
     }
 
-    public void saveHashMapToJson(HashMap<String, WorkContact> saveHashMap) {
 
-        try(FileWriter fileWriter = new FileWriter("src/main/java/projektarbete/data/workcontacs.json")) {
+    /**
+     * Should be executed on closing the program.
+     *
+     * @param saveHashMap to .json file
+     */
+    public static void saveHashMapToJson(HashMap<String, WorkContact> saveHashMap) {
+
+        try (FileWriter fileWriter = new FileWriter("src/main/java/projektarbete/data/workcontacs.json")) {
 
 
-            gson.toJson(saveHashMap,fileWriter);
+            gson.toJson(saveHashMap, fileWriter);
             System.out.println("Writing updated HashMap to .json.");
 
-        } catch(IOException e) {
+        } catch (IOException e) {
             System.out.println("Writing to .json failed: ");
             e.printStackTrace();
         }
