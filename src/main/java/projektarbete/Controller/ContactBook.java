@@ -11,6 +11,21 @@ public class ContactBook {
 
     public static HashMap<String, WorkContact> workContactHashMap = new HashMap<>();//load json-file
 
+    public static String searchContact(String key)  {
+        String result = "If You see This Its Not Working kek";
+        if(workContactHashMap.containsKey(key)) {
+            result = "\n" +
+                    "Firstname: " + workContactHashMap.get(key).getFirstName() + "\n" +
+                    "Lastname: " + workContactHashMap.get(key).getLastName() + "\n" +
+                    "Phone number private: " + workContactHashMap.get(key).getPhoneNumber() + "\n" +
+                    "Phone Number Work: " + workContactHashMap.get(key).getJobPhoneNumber() + "\n" +
+                    "Email-Address: " + workContactHashMap.get(key).getEmail() + "\n" +
+                    "Company: " + workContactHashMap.get(key).getCompany() + "\n" +
+                    "Job title: " + workContactHashMap.get(key).getTitle() + "\n";
+        }
+        return result;
+    }
+
     public static void removeContact(String key)  {
         workContactHashMap.remove(key);
     }
@@ -83,6 +98,7 @@ public class ContactBook {
         printContactBook();
         removeContact("Albert");
         printContactBook();
+        System.out.println(searchContact("Casper"));
 
     }
 
