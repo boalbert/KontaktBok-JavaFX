@@ -60,7 +60,10 @@ public class ContactBook {
                 workContactHashMap.get(key).setEmail(change);
                 break;
             }
-            case 8 : {
+         /*   case 8 : {  ifall vi vill ha en som man kan uppdatera allt. T.ex köra Jannis metod igen genom FX?-GUI?
+                break;
+            }
+        */    case 9 : {
                 return;
             }
         }
@@ -92,15 +95,6 @@ public class ContactBook {
         addWorkContactToContactBook("Albert","Andersson","43423","alber@test.se","VetInte","VD","244234");
         addWorkContactToContactBook("Joakim","liden","0876","joakim@test.com","DontKnow","teamleader","44234");
         addWorkContactToContactBook("Casper","ckokealot","93837","ckokealot@choke.se","Hell Production","stagehand","8765453");
-
-        printContactBook();
-        updateContactBook(7,"Casper","XXXXX");
-        printContactBook();
-        removeContact("Albert");
-        printContactBook();
-        System.out.println(searchContact("Casper"));
-
     }
-
 }
 
