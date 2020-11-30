@@ -53,8 +53,6 @@ public class MainMenu extends Application {
 
         mainBorderPane.setLeft(gridPane);
 
-
-
         Button addButton = new Button("Add contact");
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -82,10 +80,20 @@ public class MainMenu extends Application {
             }
         });
 
+        Button updateButton = new Button("Update");
+        updateButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                UpdateContact updateContact = new UpdateContact();
+                updateContact.start(stage);
+            }
+        });
+
 
         gridPane.add(addButton, 0,0);
         gridPane.add(searchButton,0,1);
         gridPane.add(removeButton,0,2);
+        gridPane.add(updateButton,0,3);
 
         Scene scene = new Scene(mainBorderPane);
         stage.setScene(scene);

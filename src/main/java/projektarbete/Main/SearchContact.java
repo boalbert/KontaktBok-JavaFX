@@ -30,7 +30,7 @@ public class SearchContact extends Application {
         searchGridPane.setVgap(20);
         searchGridPane.setGridLinesVisible(false);
 
-        Text tSearch = new Text("Phone number: ");
+        Text tSearch = new Text("Name: ");
         searchGridPane.add(tSearch, 0, 0);
         TextField tfSearch = new TextField();
         tfSearch.setPromptText("Phone number");
