@@ -73,9 +73,19 @@ public class MainMenu extends Application {
             }
         });
 
+        Button removeButton = new Button("Remove");
+        removeButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                RemoveContact removeContact = new RemoveContact();
+                removeContact.start(stage);
+            }
+        });
+
 
         gridPane.add(addButton, 0,0);
         gridPane.add(searchButton,0,1);
+        gridPane.add(removeButton,0,2);
 
         Scene scene = new Scene(mainBorderPane);
         stage.setScene(scene);
