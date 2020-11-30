@@ -49,6 +49,10 @@ public class SearchContact extends Application {
                         tfSearch.getText()
                 );
 
+                System.out.println(ContactBook.searchContact(
+                        tfSearch.getText()
+                ));
+
             }
         });
 

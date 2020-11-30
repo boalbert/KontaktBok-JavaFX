@@ -10,7 +10,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import projektarbete.Controller.ContactBook;
+import projektarbete.Model.WorkContact;
+import projektarbete.data.ioHandling;
+
+import java.util.HashMap;
+
 public class MainMenu extends Application {
+
+    public static HashMap<String, WorkContact> workContactHashMap = ioHandling.loadHashMapFromJson();
 
     public static void main(String[] args) {
         launch(args);
@@ -18,6 +26,8 @@ public class MainMenu extends Application {
 
     @Override
     public void start(Stage stage) {
+
+        ContactBook.printContactBook();
 
 
         BorderPane mainBorderPane = new BorderPane();
@@ -35,6 +45,7 @@ public class MainMenu extends Application {
         exitMenu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                ioHandling.saveHashMapToJson(workContactHashMap);
                 stage.close();
             }
         });

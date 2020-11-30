@@ -1,62 +1,58 @@
 package projektarbete.Controller;
-
-
-
+import projektarbete.Main.MainMenu;
 import projektarbete.Model.WorkContact;
 
 import java.util.HashMap;
 
 public class ContactBook {
 
-    public static HashMap<String, WorkContact> workContactHashMap = new HashMap<>();//load json-file
-
     public static String searchContact(String key)  {
         String result = "If You see This Its Not Working kek";
-        if(workContactHashMap.containsKey(key)) {
+        if(MainMenu.workContactHashMap.containsKey(key)) {
             result = "\n" +
-                    "Firstname: " + workContactHashMap.get(key).getFirstName() + "\n" +
-                    "Lastname: " + workContactHashMap.get(key).getLastName() + "\n" +
-                    "Phone number private: " + workContactHashMap.get(key).getPhoneNumber() + "\n" +
-                    "Phone Number Work: " + workContactHashMap.get(key).getJobPhoneNumber() + "\n" +
-                    "Email-Address: " + workContactHashMap.get(key).getEmail() + "\n" +
-                    "Company: " + workContactHashMap.get(key).getCompany() + "\n" +
-                    "Job title: " + workContactHashMap.get(key).getTitle() + "\n";
+                    "Firstname: " + MainMenu.workContactHashMap.get(key).getFirstName() + "\n" +
+                    "Lastname: " + MainMenu.workContactHashMap.get(key).getLastName() + "\n" +
+                    "Phone number private: " + MainMenu.workContactHashMap.get(key).getPhoneNumber() + "\n" +
+                    "Phone Number Work: " + MainMenu.workContactHashMap.get(key).getJobPhoneNumber() + "\n" +
+                    "Email-Address: " + MainMenu.workContactHashMap.get(key).getEmail() + "\n" +
+                    "Company: " + MainMenu.workContactHashMap.get(key).getCompany() + "\n" +
+                    "Job title: " + MainMenu.workContactHashMap.get(key).getTitle() + "\n";
         }
         return result;
     }
 
     public static void removeContact(String key)  {
-        workContactHashMap.remove(key);
+        MainMenu.workContactHashMap.remove(key);
     }
 
     public static void updateContactBook(int choice, String key, String change)  {
         switch (choice) {
             case 1 : {
-                workContactHashMap.get(key).setCompany(change);
+                MainMenu.workContactHashMap.get(key).setCompany(change);
                 break;
             }
             case 2 : {
-                workContactHashMap.get(key).setTitle(change);
+                MainMenu.workContactHashMap.get(key).setTitle(change);
                 break;
             }
             case 3 : {
-                workContactHashMap.get(key).setJobPhoneNumber(change);
+                MainMenu.workContactHashMap.get(key).setJobPhoneNumber(change);
                 break;
             }
             case 4 : {
-                workContactHashMap.get(key).setFirstName(change);
+                MainMenu.workContactHashMap.get(key).setFirstName(change);
                 break;
             }
             case 5 : {
-                workContactHashMap.get(key).setLastName(change);
+                MainMenu.workContactHashMap.get(key).setLastName(change);
                 break;
             }
             case 6 : {
-                workContactHashMap.get(key).setPhoneNumber(change);
+                MainMenu.workContactHashMap.get(key).setPhoneNumber(change);
                 break;
             }
             case 7 : {
-                workContactHashMap.get(key).setEmail(change);
+                MainMenu.workContactHashMap.get(key).setEmail(change);
                 break;
             }
          /*   case 8 : {  ifall vi vill ha en som man kan uppdatera allt. T.ex köra Jannis metod igen genom FX?-GUI?
@@ -69,7 +65,7 @@ public class ContactBook {
     }
 
     public static void printContactBook(){
-        workContactHashMap.forEach((key, value) -> System.out.println("\n" +
+        MainMenu.workContactHashMap.forEach((key, value) -> System.out.println("\n" +
                                                                         "Firstname: " + value.getFirstName() + "\n" +
                                                                         "Lastname: " + value.getLastName() + "\n" +
                                                                         "Phone number private: " + value.getPhoneNumber() + "\n" +
@@ -85,7 +81,7 @@ public class ContactBook {
         //initiera ny objekt workContact
         WorkContact workContact = new WorkContact(firstName,lastName,phoneNumber,email,company,title,jobPhoneNumber);
         //lägga till ny objekt till hashmappen
-        workContactHashMap.put(workContact.getFirstName(),workContact);
+        MainMenu.workContactHashMap.put(workContact.getFirstName(),workContact);
 
     }
     //adding psvm for testing purpose
