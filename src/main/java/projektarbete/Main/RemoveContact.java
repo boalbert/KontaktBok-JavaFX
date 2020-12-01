@@ -31,10 +31,10 @@ public class RemoveContact extends Application {
         removeGridPane.setGridLinesVisible(false);
 
 
-        Text tRemove = new Text("Phone number: ");
+        Text tRemove = new Text("First name: ");
         removeGridPane.add(tRemove, 0, 0);
         TextField tfRemove = new TextField();
-        tfRemove.setPromptText("Phone number");
+        tfRemove.setPromptText("First name");
         removeGridPane.add(tfRemove, 1,0);
 
         Button removeButton = new Button("Remove");
@@ -48,8 +48,10 @@ public class RemoveContact extends Application {
             public void handle(ActionEvent event) {
                 ContactBook.removeContact(
                         tfRemove.getText()
-                );
 
+                );
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.start(stage);
             }
         });
 

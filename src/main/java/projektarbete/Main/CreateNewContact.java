@@ -72,22 +72,8 @@ public class CreateNewContact extends Application {
         tfAddEmail.setPromptText("Email");
         addGridPane.add(tfAddEmail,1,6);
 
-        Button aB = new Button("Add new Contact");
-
-        addGridPane.add(aB,0,7);
-        Button aBack = new Button("Back");
-
-        aBack.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                MainMenu mainMenu = new MainMenu();
-                mainMenu.start(stage);
-            }
-        });
-        addGridPane.add(aBack,1,7);
-
-
-        aB.setOnAction(new EventHandler<ActionEvent>() {
+        Button addButton = new Button("Add new Contact");
+        addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 ContactBook.addWorkContactToContactBook(
@@ -104,10 +90,17 @@ public class CreateNewContact extends Application {
             }
 
         });
+        addGridPane.add(addButton,0,7);
 
-
-
-
+        Button backButton = new Button("Back");
+        backButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.start(stage);
+            }
+        });
+        addGridPane.add(backButton,1,7);
 
 
 

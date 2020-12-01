@@ -15,6 +15,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import projektarbete.Controller.ContactBook;
 
+import java.util.ArrayList;
+
 public class UpdateContact extends Application {
 
     public static void main(String[] args) {
@@ -38,11 +40,10 @@ public class UpdateContact extends Application {
         tfName.setPromptText("First name");
 
 
+        ArrayList<String> firstNamesArrayList = new ArrayList<String>(ContactBook.workContactHashMap.keySet());
 
         ObservableList<String> updateName =
-                FXCollections.observableArrayList(
-                  "Joakim", "Casper", "Jannis", "Albert"
-                );
+                FXCollections.observableArrayList(firstNamesArrayList);
 
         ObservableList<String> updateChoice =
                 FXCollections.observableArrayList(
@@ -65,25 +66,18 @@ public class UpdateContact extends Application {
         updateButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //tfName.getText();
-                //ContactBook.updateContactBook(1, );
-
                 System.out.println(comboBoxName.getValue());
                 System.out.println(comboBoxUpdate.getValue());
-                //UpdateValue updateValue = new UpdateValue(comboBoxName.getValue(), comboBoxUpdate.getValue());
-                //updateValue.start(stage);
                 UpdateAlertBox.display((String) comboBoxName.getValue(), (String) comboBoxUpdate.getValue());
 
             }
         });
 
         updateGridPane.add(tName,0,0);
-        //updateGridPane.add(tfName,1,0);
         updateGridPane.add(comboBoxName,1,0);
         updateGridPane.add(updateButton,3,0);
         updateGridPane.add(comboBoxUpdate, 2, 0);
         updateGridPane.add(aBack,1,7);
-
 
         Scene scene = new Scene(updateGridPane);
         stage.setScene(scene);
