@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class ContactBook {
 
     public static String searchContact(String key)  {
-        String result = "If You see This Its Not Working kek";
+        String result = null;
         if(MainMenu.workContactHashMap.containsKey(key)) {
             result = "\n" +
                     "Firstname: " + MainMenu.workContactHashMap.get(key).getFirstName() + "\n" +
@@ -40,7 +40,10 @@ public class ContactBook {
                 break;
             }
             case 4 : {
-                MainMenu.workContactHashMap.get(key).setFirstName(change);
+                WorkContact wc1 = MainMenu.workContactHashMap.get(key);
+                wc1.setFirstName(change);
+                MainMenu.workContactHashMap.remove(key);
+                MainMenu.workContactHashMap.put(wc1.getFirstName(),wc1);
                 break;
             }
             case 5 : {
@@ -90,6 +93,10 @@ public class ContactBook {
         addWorkContactToContactBook("Albert","Andersson","43423","alber@test.se","VetInte","VD","244234");
         addWorkContactToContactBook("Joakim","liden","0876","joakim@test.com","DontKnow","teamleader","44234");
         addWorkContactToContactBook("Casper","ckokealot","93837","ckokealot@choke.se","Hell Production","stagehand","8765453");
+
+        updateContactBook(4, "Jannis", "Penis");
+        System.out.println(searchContact("Penis"));
+
     }
 }
 
