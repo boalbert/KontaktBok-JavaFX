@@ -41,7 +41,6 @@ public class UpdateAlertBox {
             @Override
             public void handle(ActionEvent event) {
                 int choice;
-                textField.getText();
                 System.out.println(textField.getText());
                 switch (value) {
                     case "Company":
@@ -71,8 +70,12 @@ public class UpdateAlertBox {
                         break;
                 }
                 System.out.println(choice);
-                ContactBook.updateContactBook(choice, name, value);
+                System.out.println(choice + name + value);
+                ContactBook.updateContactBook(choice, name, textField.getText());
                 ContactBook.searchContact(name);
+                ContactBook.printContactBook();
+                stage.close();
+
 
             }
         });

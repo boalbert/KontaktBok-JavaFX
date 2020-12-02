@@ -40,7 +40,9 @@ public class ContactBook {
                 break;
             }
             case 4 : {
-                MainMenu.workContactHashMap.get(key).setFirstName(change);
+                WorkContact wc1 = MainMenu.workContactHashMap.get(key);
+                wc1.setFirstName(change);
+                MainMenu.workContactHashMap.replace(change, MainMenu.workContactHashMap.get(key), wc1);
                 break;
             }
             case 5 : {

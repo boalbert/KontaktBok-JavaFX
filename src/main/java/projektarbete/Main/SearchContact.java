@@ -55,6 +55,7 @@ public class SearchContact extends Application {
 
         Button searchButton = new Button("Search");
         Button backButton = new Button("Back");
+        Button testPrintButton = new Button("Test print");
 
         searchButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -79,6 +80,12 @@ public class SearchContact extends Application {
             public void handle(ActionEvent event) {
                 MainMenu mainMenu = new MainMenu();
                 mainMenu.start(stage);
+            }
+        });
+        testPrintButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
             }
         });
 

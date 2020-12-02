@@ -3,7 +3,7 @@
     "company": "ASdasd",
     "title": "MLT",
     "jobPhoneNumber": "123123123",
-    "firstName": "Rut",
+    "firstName": "dsfsh",
     "lastName": "Andersson",
     "phoneNumber": "123213",
     "email": "rut@gmail.com"
@@ -16,6 +16,15 @@
     "lastName": "asdasd",
     "phoneNumber": "13123",
     "email": "albert@gmail.com"
+  },
+  "joakim": {
+    "company": "l",
+    "title": "l",
+    "jobPhoneNumber": "l",
+    "firstName": "Joacim",
+    "lastName": "l",
+    "phoneNumber": "l",
+    "email": "l"
   },
   "Casper": {
     "company": "MLT",

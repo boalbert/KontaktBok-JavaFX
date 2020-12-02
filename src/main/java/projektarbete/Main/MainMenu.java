@@ -26,6 +26,7 @@ public class MainMenu extends Application {
     public static HashMap<String, WorkContact> workContactHashMap = ioHandling.loadHashMapFromJson();
 
     public static void main(String[] args) {
+        System.out.println(workContactHashMap.keySet());
         launch(args);
     }
 
@@ -38,7 +39,7 @@ public class MainMenu extends Application {
         BorderPane mainBorderPane = new BorderPane();
         mainBorderPane.setMinSize(600, 400);
 
-        ArrayList<String> firstNamesArrayList = new ArrayList<String>(workContactHashMap.keySet());
+        ArrayList<String> firstNamesArrayList = new ArrayList(workContactHashMap.keySet());
 
         ListView<String> listView = new ListView();
         ObservableList<String> contactsFromHashMap =
@@ -64,7 +65,7 @@ public class MainMenu extends Application {
         loadMenu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                listView.refresh();
             }
         });
         saveMenu.setOnAction(new EventHandler<ActionEvent>() {

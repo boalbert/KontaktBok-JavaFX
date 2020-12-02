@@ -68,7 +68,7 @@ public class UpdateContact extends Application {
             public void handle(ActionEvent event) {
                 System.out.println(comboBoxName.getValue());
                 System.out.println(comboBoxUpdate.getValue());
-                UpdateAlertBox.display((String) comboBoxName.getValue(), (String) comboBoxUpdate.getValue());
+                UpdateAlertBox.display(comboBoxName.getValue().toString(), comboBoxUpdate.getValue().toString());
 
             }
         });
