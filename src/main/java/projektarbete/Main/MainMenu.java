@@ -23,11 +23,17 @@ import java.util.HashMap;
 
 public class MainMenu extends Application {
 
-    public static HashMap<String, WorkContact> workContactHashMap = ioHandling.loadHashMapFromJson();
+    public static HashMap<String, WorkContact> workContactHashMap = ioHandling.loadHashMapFromJson("src/main/java/projektarbete/data/workcontacs.json");
+    private static final String filepath = "src/main/java/projektarbete/data/workcontacs.json";
 
     public static void main(String[] args) {
         System.out.println(workContactHashMap.keySet());
         launch(args);
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            ioHandling.saveHashMapToJson(workContactHashMap,filepath);
+            System.out.println("Exiting program.");
+        }));
     }
 
     @Override
@@ -77,7 +83,7 @@ public class MainMenu extends Application {
         exitMenu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                ioHandling.saveHashMapToJson(workContactHashMap);
+                ioHandling.saveHashMapToJson(workContactHashMap, filepath);
                 stage.close();
             }
         });
