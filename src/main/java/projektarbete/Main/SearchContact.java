@@ -9,6 +9,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -31,15 +32,9 @@ public class SearchContact extends Application {
 
         BorderPane searchBorderPane = new BorderPane();
         GridPane searchGridPane = new GridPane();
-        ListView<String> listView = new ListView<>();
+        TextArea searchTextArea = new TextArea();
 
-        ArrayList<String> searchArrayList = new ArrayList<String>();
-
-        ObservableList<String> searhFromHashMap =
-                FXCollections.observableArrayList(
-                        searchArrayList
-                );
-
+        searchTextArea.setMaxWidth(200);
         searchBorderPane.setMinSize(600,400);
 
         searchGridPane.setMinSize(300, 400);
@@ -60,15 +55,8 @@ public class SearchContact extends Application {
         searchButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
-                ObservableList<String> searhFromHashMap =
-                        FXCollections.observableArrayList(
-                                ContactBook.searchContact(
-                                        tfSearch.getText())
-                        );
-                System.out.println(ContactBook.searchContact(
+                searchTextArea.setText(ContactBook.searchContact(
                         tfSearch.getText()));
-
                 System.out.println(ContactBook.searchContact(
                         tfSearch.getText()
                 ));
@@ -97,7 +85,7 @@ public class SearchContact extends Application {
         searchGridPane.add(backButton, 0,1);
 
         searchBorderPane.setLeft(searchGridPane);
-        searchBorderPane.setRight(listView);
+        searchBorderPane.setRight(searchTextArea);
 
         Scene scene = new Scene(searchBorderPane);
         stage.setScene(scene);
