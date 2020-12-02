@@ -33,12 +33,12 @@ public class SearchContact extends Application {
         GridPane searchGridPane = new GridPane();
         ListView<String> listView = new ListView<>();
 
-//        ArrayList<String> searchArrayList = new ArrayList<String>();
-//
-//        ObservableList<String> searhFromHashMap =
-//                FXCollections.observableArrayList(
-//                        searchArrayList
-//                );
+        ArrayList<String> searchArrayList = new ArrayList<String>();
+
+        ObservableList<String> searhFromHashMap =
+                FXCollections.observableArrayList(
+                        searchArrayList
+                );
 
         searchBorderPane.setMinSize(600,400);
 
@@ -59,11 +59,15 @@ public class SearchContact extends Application {
         searchButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                ContactBook.searchContact(
-                        tfSearch.getText()
 
-                );
-                System.out.println("tfSearch.getText()");
+                ObservableList<String> searhFromHashMap =
+                        FXCollections.observableArrayList(
+                                ContactBook.searchContact(
+                                        tfSearch.getText())
+                        );
+                System.out.println(ContactBook.searchContact(
+                        tfSearch.getText()));
+
             }
         });
         backButton.setOnAction(new EventHandler<ActionEvent>() {
