@@ -142,7 +142,7 @@ public class MainMenu extends Application {
 
         Scene scene = new Scene(mainBorderPane);
         stage.setTitle("Main Menu");
-        stage.getIcons().add(new Image("file:src/main/icon.projektarbete.byggverktyg.png"));
+        stage.getIcons().add(new Image("file:src/Resources/icon.projektarbete.byggverktyg.png"));
         stage.setScene(scene);
         stage.show();
 
