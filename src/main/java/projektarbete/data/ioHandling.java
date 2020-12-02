@@ -20,13 +20,13 @@ public class ioHandling {
      *
      * @return HashMap populated from .json-file.
      */
-    public static HashMap<String, WorkContact> loadHashMapFromJson() {
+    public static HashMap<String, WorkContact> loadHashMapFromJson(String filepath) {
         System.out.println("Trying to populate HashMap from .json-file...");
 
         Type typeHashMap = new TypeToken<HashMap<String, WorkContact>>() {
         }.getType();
 
-        try (FileReader fileReader = new FileReader("src/main/java/projektarbete/data/workcontacs.json")) {
+        try (FileReader fileReader = new FileReader(filepath)) {
 
             // Load HashMap from FileReader via Gson, we use Type parameter to specify what data we're loading
             HashMap<String, WorkContact> loadedWorkContacts = gson.fromJson(fileReader, typeHashMap);

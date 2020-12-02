@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 public class MainMenu extends Application {
 
-    public static HashMap<String, WorkContact> workContactHashMap = ioHandling.loadHashMapFromJson();
+    public static HashMap<String, WorkContact> workContactHashMap = ioHandling.loadHashMapFromJson("src/main/java/projektarbete/data/workcontacs.json");
 
     public static void main(String[] args) {
         launch(args);
