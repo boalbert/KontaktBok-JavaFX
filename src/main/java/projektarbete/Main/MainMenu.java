@@ -140,6 +140,7 @@ public class MainMenu extends Application {
         gridPane.add(updateButton,0,3);
 
         Scene scene = new Scene(mainBorderPane);
+        stage.setTitle("Main Menu");
         stage.setScene(scene);
         stage.show();
 

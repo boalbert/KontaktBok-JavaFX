@@ -6,5 +6,4 @@
 .idea/dataSources.local.xml
 # Editor-based HTTP Client requests
 .idea/httpRequests/
-target/
 .DS_Store

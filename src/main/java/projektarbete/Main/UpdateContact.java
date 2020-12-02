@@ -81,6 +81,7 @@ public class UpdateContact extends Application {
         updateGridPane.add(aBack,1,7);
 
         Scene scene = new Scene(updateGridPane);
+        stage.setTitle("Update Contact");
         stage.setScene(scene);
         stage.show();
     }

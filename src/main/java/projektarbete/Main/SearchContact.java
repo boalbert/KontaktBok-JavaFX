@@ -88,6 +88,7 @@ public class SearchContact extends Application {
         searchBorderPane.setRight(searchTextArea);
 
         Scene scene = new Scene(searchBorderPane);
+        stage.setTitle("Search Contact");
         stage.setScene(scene);
         stage.show();
 

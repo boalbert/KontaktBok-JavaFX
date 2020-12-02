@@ -103,6 +103,7 @@ public class CreateNewContact extends Application {
         addGridPane.add(backButton,1,7);
 
         Scene scene = new Scene(addGridPane);
+        stage.setTitle("Create New Contact");
         stage.setScene(scene);
         stage.show();
     }

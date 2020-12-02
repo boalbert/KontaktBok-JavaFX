@@ -8,16 +8,17 @@ public class ContactBook {
 
     public static String searchContact(String key) {
         String result = null;
-        if (MainMenu.workContactHashMap.containsKey(key)) {
-            result = "\n" +
-                    "Firstname: " + MainMenu.workContactHashMap.get(key).getFirstName() + "\n" +
-                    "Lastname: " + MainMenu.workContactHashMap.get(key).getLastName() + "\n" +
-                    "Phone number private: " + MainMenu.workContactHashMap.get(key).getPhoneNumber() + "\n" +
-                    "Phone Number Work: " + MainMenu.workContactHashMap.get(key).getJobPhoneNumber() + "\n" +
-                    "Email-Address: " + MainMenu.workContactHashMap.get(key).getEmail() + "\n" +
-                    "Company: " + MainMenu.workContactHashMap.get(key).getCompany() + "\n" +
-                    "Job title: " + MainMenu.workContactHashMap.get(key).getTitle() + "\n";
-        }
+            if (MainMenu.workContactHashMap.containsKey(key)) {
+                result = "\n" +
+                        "Firstname: " + MainMenu.workContactHashMap.get(key).getFirstName() + "\n" +
+                        "Lastname: " + MainMenu.workContactHashMap.get(key).getLastName() + "\n" +
+                        "Phone number private: " + MainMenu.workContactHashMap.get(key).getPhoneNumber() + "\n" +
+                        "Phone Number Work: " + MainMenu.workContactHashMap.get(key).getJobPhoneNumber() + "\n" +
+                        "Email-Address: " + MainMenu.workContactHashMap.get(key).getEmail() + "\n" +
+                        "Company: " + MainMenu.workContactHashMap.get(key).getCompany() + "\n" +
+                        "Job title: " + MainMenu.workContactHashMap.get(key).getTitle() + "\n";
+            }
+        else System.out.println("Something went wrong...");
         return result;
     }
 
@@ -107,8 +108,8 @@ public class ContactBook {
         addWorkContactToContactBook("Joakim", "liden", "0876", "joakim@test.com", "DontKnow", "teamleader", "44234");
         addWorkContactToContactBook("Casper", "ckokealot", "93837", "ckokealot@choke.se", "Hell Production", "stagehand", "8765453");
 
-        updateContactBook(4, "Jannis", "Penis");
-        System.out.println(searchContact("Penis"));
+        System.out.println(searchContact("casper"));
+
 
     }
 }

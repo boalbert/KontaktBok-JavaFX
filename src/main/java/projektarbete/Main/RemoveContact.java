@@ -65,6 +65,7 @@ public class RemoveContact extends Application {
 
 
         Scene scene = new Scene(removeGridPane);
+        stage.setTitle("Remove Contact");
         stage.setScene(scene);
         stage.show();
     }
