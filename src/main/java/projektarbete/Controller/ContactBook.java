@@ -74,7 +74,6 @@ public class ContactBook {
         String errorMessage = "Contact list is empty";
 
         if (MainMenu.workContactHashMap != null) {
-
             MainMenu.workContactHashMap.forEach((key, value) -> System.out.println("\n" +
                     "Firstname: " + value.getFirstName() + "\n" +
                     "Lastname: " + value.getLastName() + "\n" +

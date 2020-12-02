@@ -22,18 +22,17 @@ class WorkContactTest {
     }
 
     @Test
-    void getTitle() {
+    void TestGetTitle() {
         WorkContact workContact = new WorkContact("Jannis", "Mueller","12345",
                 "jannis@test.de","Senab","monkey","1223");
         assertNotEquals("",workContact.getTitle());
     }
 
     @Test
-    void getJobPhoneNumber() {
+    void TestGetJobPhoneNumber() {
         WorkContact workContact = new WorkContact("Jannis", "Mueller","12345",
                 "jannis@test.de","Senab","monkey","1223");
         assertEquals("1223",workContact.getJobPhoneNumber());
-
     }
 
     @AfterAll
