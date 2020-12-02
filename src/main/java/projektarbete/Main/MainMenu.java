@@ -1,6 +1,8 @@
 package projektarbete.Main;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -9,6 +11,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import projektarbete.Controller.ContactBook;
+
+import java.util.ArrayList;
 
 import projektarbete.Controller.ContactBook;
 import projektarbete.Model.WorkContact;
@@ -33,15 +38,41 @@ public class MainMenu extends Application {
         BorderPane mainBorderPane = new BorderPane();
         mainBorderPane.setMinSize(600, 400);
 
-        ListView listView = new ListView();
+        ArrayList<String> firstNamesArrayList = new ArrayList<String>(workContactHashMap.keySet());
+
+        ListView<String> listView = new ListView();
+        ObservableList<String> contactsFromHashMap =
+                FXCollections.observableArrayList(
+                        firstNamesArrayList
+                );
+        listView.setItems(contactsFromHashMap);
 
         mainBorderPane.setRight(listView);
         MenuBar menuBar = new MenuBar();
         mainBorderPane.setTop(menuBar);
 
         Menu fileMenu = new Menu("File");
+
+        MenuItem loadMenu = new MenuItem("Load");
+        MenuItem saveMenu = new MenuItem("Save");
         MenuItem exitMenu = new MenuItem("Exit");
+
+        fileMenu.getItems().add(loadMenu);
+        fileMenu.getItems().add(saveMenu);
         fileMenu.getItems().add(exitMenu);
+
+        loadMenu.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
+        saveMenu.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
         exitMenu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -49,7 +80,6 @@ public class MainMenu extends Application {
                 stage.close();
             }
         });
-
 
 
         menuBar.getMenus().addAll(fileMenu);
@@ -63,8 +93,6 @@ public class MainMenu extends Application {
         gridPane.setGridLinesVisible(false);
 
         mainBorderPane.setLeft(gridPane);
-
-
 
         Button addButton = new Button("Add contact");
         addButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -93,10 +121,20 @@ public class MainMenu extends Application {
             }
         });
 
+        Button updateButton = new Button("Update");
+        updateButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                UpdateContact updateContact = new UpdateContact();
+                updateContact.start(stage);
+            }
+        });
+
 
         gridPane.add(addButton, 0,0);
         gridPane.add(searchButton,0,1);
         gridPane.add(removeButton,0,2);
+        gridPane.add(updateButton,0,3);
 
         Scene scene = new Scene(mainBorderPane);
         stage.setScene(scene);
