@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -141,6 +142,7 @@ public class MainMenu extends Application {
 
         Scene scene = new Scene(mainBorderPane);
         stage.setTitle("Main Menu");
+        stage.getIcons().add(new Image("file:src/main/icon.projektarbete.byggverktyg.png"));
         stage.setScene(scene);
         stage.show();
 
