@@ -18,7 +18,11 @@ public class ioHandling {
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-
+    /**
+     *
+     * @param filepath to .json file
+     * @return true if file found / false file not found
+     */
     public static boolean checkIfFileExists(String filepath) {
         System.out.println("Searching for .json-file...");
 
@@ -96,9 +100,11 @@ public class ioHandling {
             gson.toJson(saveHashMap, fileWriter);
             System.out.println("Writing updated HashMap to .json.");
 
+
         } catch (IOException e) {
-            System.out.println("Writing to .json failed: ");
+            System.out.println("Writing to .json failed.");
             e.printStackTrace();
         }
+
     }
 }
