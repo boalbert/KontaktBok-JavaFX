@@ -74,4 +74,4 @@ class ContactBookTest {
         System.out.println("Tests of Getter methods from Class WorkContact finished");
     }
 
-    }
+}
