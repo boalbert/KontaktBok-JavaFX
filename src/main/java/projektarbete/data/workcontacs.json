@@ -1,9 +1,9 @@
 {
-  "Rut": {
+  "rut": {
     "company": "ASdasd",
     "title": "MLT",
     "jobPhoneNumber": "123123123",
-    "firstName": "Rut",
+    "firstName": "rut",
     "lastName": "Andersson",
     "phoneNumber": "123213",
     "email": "rut@gmail.com"

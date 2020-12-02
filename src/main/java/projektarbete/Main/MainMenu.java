@@ -45,6 +45,7 @@ public class MainMenu extends Application {
         BorderPane mainBorderPane = new BorderPane();
         mainBorderPane.setMinSize(600, 400);
         TextArea textArea = new TextArea();
+        textArea.setEditable(false);
         textArea.setMaxWidth(300);
         ListView<String> listView = new ListView();
         listView.setMaxWidth(150);
