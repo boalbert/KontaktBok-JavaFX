@@ -1,29 +1,11 @@
 {
-  "Rut": {
-    "company": "ASdasd",
-    "title": "MLT",
-    "jobPhoneNumber": "123123123",
-    "firstName": "Rut",
-    "lastName": "Andersson",
-    "phoneNumber": "123213",
-    "email": "rut@gmail.com"
-  },
-  "Hello": {
-    "company": "MLT",
-    "title": "Admin",
-    "jobPhoneNumber": "213123",
-    "firstName": "Hello",
-    "lastName": "asdasd",
-    "phoneNumber": "13123",
-    "email": "albert@gmail.com"
-  },
-  "Casper": {
-    "company": "MLT",
-    "title": "Admin",
-    "jobPhoneNumber": "031-23132",
-    "firstName": "Casper",
-    "lastName": "Anderson",
-    "phoneNumber": "0730550834",
-    "email": "andersson.albert@gmail.com"
+  "asd": {
+    "company": "asd",
+    "title": "qsad",
+    "jobPhoneNumber": "asda",
+    "firstName": "asd",
+    "lastName": "asd",
+    "phoneNumber": "asd",
+    "email": "asd"
   }
 }

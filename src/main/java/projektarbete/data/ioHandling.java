@@ -9,11 +9,33 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 
 public class ioHandling {
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+
+    public static void checkIfFileExists(String filepath) {
+        System.out.println("Searching for .json-file...");
+
+        Path path = Paths.get(filepath);
+
+        if (Files.exists(path)) {
+
+            if (Files.isRegularFile(path)) {
+                System.out.println(".json-file was found.");
+            }
+
+        } else {
+            System.out.println(".json-file not found, will be created on exit.");
+        }
+
+    }
+
 
     /**
      * Should execute when we start the program
@@ -21,27 +43,36 @@ public class ioHandling {
      * @return HashMap populated from .json-file.
      */
     public static HashMap<String, WorkContact> loadHashMapFromJson(String filepath) {
-        System.out.println("Trying to populate HashMap from .json-file...");
+
+        checkIfFileExists(filepath);
 
         Type typeHashMap = new TypeToken<HashMap<String, WorkContact>>() {
         }.getType();
 
-        try (FileReader fileReader = new FileReader(filepath)) {
+
+        try (FileReader fileReader = new FileReader(filepath)
+
+
+        ) {
 
             // Load HashMap from FileReader via Gson, we use Type parameter to specify what data we're loading
             HashMap<String, WorkContact> loadedWorkContacts = gson.fromJson(fileReader, typeHashMap);
 
-            if (null == typeHashMap) {
+            if (null == loadedWorkContacts) {
                 System.out.println(".json-file was empty, returning an empty HashMap.");
                 loadedWorkContacts = new HashMap<>();
+            } else {
+                System.out.println(".json-file was not empty. Returning populated HashMap.");
+
             }
 
-            System.out.println("Success! Returning populated HashMap.");
             return loadedWorkContacts;
         } catch (IOException e) {
+            System.out.println("File was not found... throwing IOException");
             e.printStackTrace();
         }
 
+        System.out.println("Starting from scratch with an empty HashMap");
         return new HashMap<>();
     }
 
@@ -51,9 +82,9 @@ public class ioHandling {
      *
      * @param saveHashMap to .json file
      */
-    public static void saveHashMapToJson(HashMap<String, WorkContact> saveHashMap) {
+    public static void saveHashMapToJson(HashMap<String, WorkContact> saveHashMap, String filepath) {
 
-        try (FileWriter fileWriter = new FileWriter("src/main/java/projektarbete/data/workcontacs.json")) {
+        try (FileWriter fileWriter = new FileWriter(filepath)) {
 
 
             gson.toJson(saveHashMap, fileWriter);
