@@ -65,7 +65,6 @@ public class ContactBook {
     }
 
     public static void printContactBook(){
-
         if(MainMenu.workContactHashMap != null) {
 
         MainMenu.workContactHashMap.forEach((key, value) -> System.out.println("\n" +
