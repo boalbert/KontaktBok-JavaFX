@@ -28,7 +28,6 @@ public class UpdateAlertBox {
         Text tName = new Text("New " + value + " for " + name + ": ");
 
         TextField textField = new TextField();
-        //textField.setPromptText();
         Button closeButton = new Button("close");
         Button updateButton = new Button("Update");
         closeButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -75,6 +74,8 @@ public class UpdateAlertBox {
                 ContactBook.searchContact(name);
                 ContactBook.printContactBook();
                 stage.close();
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.start(stage);
 
 
             }
