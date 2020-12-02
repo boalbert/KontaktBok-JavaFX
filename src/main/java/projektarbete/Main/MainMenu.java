@@ -62,27 +62,11 @@ public class MainMenu extends Application {
         mainBorderPane.setTop(menuBar);
 
         Menu fileMenu = new Menu("File");
-
-        MenuItem loadMenu = new MenuItem("Load");
-        MenuItem saveMenu = new MenuItem("Save");
         MenuItem exitMenu = new MenuItem("Exit");
 
-//        fileMenu.getItems().add(loadMenu);
-//        fileMenu.getItems().add(saveMenu);
+
         fileMenu.getItems().add(exitMenu);
 
-//        loadMenu.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                listView.refresh();
-//            }
-//        });
-//        saveMenu.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//
-//            }
-//        });
         exitMenu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
