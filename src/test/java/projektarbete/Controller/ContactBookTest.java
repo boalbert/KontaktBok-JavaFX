@@ -80,7 +80,6 @@ class ContactBookTest {
         ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
         assertNotEquals("notTheRightName", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
     }
-
     @AfterAll
     static void afterAllTest() {
         System.out.println("Tests for Class ContactBook finished");
