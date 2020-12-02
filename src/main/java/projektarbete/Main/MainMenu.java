@@ -29,7 +29,6 @@ public class MainMenu extends Application {
 
         ContactBook.printContactBook();
 
-
         BorderPane mainBorderPane = new BorderPane();
         mainBorderPane.setMinSize(600, 400);
 
@@ -50,8 +49,6 @@ public class MainMenu extends Application {
             }
         });
 
-
-
         menuBar.getMenus().addAll(fileMenu);
         menuBar.setMaxWidth(600);
 
@@ -63,8 +60,6 @@ public class MainMenu extends Application {
         gridPane.setGridLinesVisible(false);
 
         mainBorderPane.setLeft(gridPane);
-
-
 
         Button addButton = new Button("Add contact");
         addButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -93,7 +88,6 @@ public class MainMenu extends Application {
             }
         });
 
-
         gridPane.add(addButton, 0,0);
         gridPane.add(searchButton,0,1);
         gridPane.add(removeButton,0,2);
@@ -101,6 +95,5 @@ public class MainMenu extends Application {
         Scene scene = new Scene(mainBorderPane);
         stage.setScene(scene);
         stage.show();
-
     }
 }

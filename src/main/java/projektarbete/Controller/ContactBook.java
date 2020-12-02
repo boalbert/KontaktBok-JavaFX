@@ -64,7 +64,10 @@ public class ContactBook {
         }
     }
 
-    public static void printContactBook(){
+    public static String printContactBook(){
+
+        String errorMessage = "Contact list is empty";
+
         if(MainMenu.workContactHashMap != null) {
 
         MainMenu.workContactHashMap.forEach((key, value) -> System.out.println("\n" +
@@ -77,9 +80,11 @@ public class ContactBook {
                 "Job title: " + value.getTitle() + "\n"));
 
         } else {
-            System.out.println("Contact list is empty");
-        }
 
+            System.out.println(errorMessage);
+            return errorMessage;
+        }
+        return null;
     }
 
     public static void addWorkContactToContactBook(String firstName,String lastName, String phoneNumber,
