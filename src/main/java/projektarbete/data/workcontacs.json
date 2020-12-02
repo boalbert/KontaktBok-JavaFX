@@ -3,28 +3,28 @@
     "company": "ASdasd",
     "title": "MLT",
     "jobPhoneNumber": "123123123",
-    "firstName": "dsfsh",
+    "firstName": "Rut",
     "lastName": "Andersson",
     "phoneNumber": "123213",
     "email": "rut@gmail.com"
+  },
+  "Joakim": {
+    "company": "l",
+    "title": "l",
+    "jobPhoneNumber": "l",
+    "firstName": "Joakim",
+    "lastName": "l",
+    "phoneNumber": "l",
+    "email": "l"
   },
   "Hello": {
     "company": "MLT",
     "title": "Admin",
     "jobPhoneNumber": "213123",
     "firstName": "Hello",
-    "lastName": "asdasd",
+    "lastName": "Helloefternamn",
     "phoneNumber": "13123",
     "email": "albert@gmail.com"
-  },
-  "joakim": {
-    "company": "l",
-    "title": "l",
-    "jobPhoneNumber": "l",
-    "firstName": "Joacim",
-    "lastName": "l",
-    "phoneNumber": "l",
-    "email": "l"
   },
   "Casper": {
     "company": "MLT",
@@ -34,5 +34,14 @@
     "lastName": "Anderson",
     "phoneNumber": "0730550834",
     "email": "andersson.albert@gmail.com"
+  },
+  "Test2": {
+    "company": "p",
+    "title": "p",
+    "jobPhoneNumber": "p",
+    "firstName": "Test2",
+    "lastName": "Efternamntest",
+    "phoneNumber": "p",
+    "email": "p"
   }
 }

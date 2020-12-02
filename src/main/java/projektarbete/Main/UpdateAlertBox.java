@@ -75,6 +75,8 @@ public class UpdateAlertBox {
                 ContactBook.searchContact(name);
                 ContactBook.printContactBook();
                 stage.close();
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.start(stage);
 
 
             }
