@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class ContactBook {
 
-    public static String searchContact(String key)  {
+    public static String searchContact(String key) {
         String result = "If You see This Its Not Working kek";
         if(MainMenu.workContactHashMap.containsKey(key)) {
             result = "\n" +
@@ -65,14 +65,21 @@ public class ContactBook {
     }
 
     public static void printContactBook(){
+
+        if(MainMenu.workContactHashMap != null) {
+
         MainMenu.workContactHashMap.forEach((key, value) -> System.out.println("\n" +
-                                                                        "Firstname: " + value.getFirstName() + "\n" +
-                                                                        "Lastname: " + value.getLastName() + "\n" +
-                                                                        "Phone number private: " + value.getPhoneNumber() + "\n" +
-                                                                        "Phone Number Work: " + value.getJobPhoneNumber() + "\n" +
-                                                                        "Email-Address: " + value.getEmail() + "\n" +
-                                                                        "Company: " + value.getCompany() + "\n" +
-                                                                        "Job title: " + value.getTitle() + "\n" ));
+                "Firstname: " + value.getFirstName() + "\n" +
+                "Lastname: " + value.getLastName() + "\n" +
+                "Phone number private: " + value.getPhoneNumber() + "\n" +
+                "Phone Number Work: " + value.getJobPhoneNumber() + "\n" +
+                "Email-Address: " + value.getEmail() + "\n" +
+                "Company: " + value.getCompany() + "\n" +
+                "Job title: " + value.getTitle() + "\n"));
+
+        } else {
+            System.out.println("Contact list is empty");
+        }
 
     }
 
@@ -84,12 +91,9 @@ public class ContactBook {
         MainMenu.workContactHashMap.put(workContact.getFirstName(),workContact);
 
     }
-    //adding psvm for testing purpose
-    public static void main(String[] args) {
-        addWorkContactToContactBook("Jannis", "Mueller","12345","jannis@test.de","Senab","monkey","1223");
-        addWorkContactToContactBook("Albert","Andersson","43423","alber@test.se","VetInte","VD","244234");
-        addWorkContactToContactBook("Joakim","liden","0876","joakim@test.com","DontKnow","teamleader","44234");
-        addWorkContactToContactBook("Casper","ckokealot","93837","ckokealot@choke.se","Hell Production","stagehand","8765453");
+
     }
-}
+
+
+
 
