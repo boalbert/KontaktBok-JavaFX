@@ -1,10 +1,13 @@
 package projektarbete.Controller;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import projektarbete.Main.MainMenu;
 
 import javax.naming.ldap.Control;
 import static org.junit.jupiter.api.Assertions.*;
+import projektarbete.Model.*;
 
 class ContactBookTest {
 
@@ -17,10 +20,6 @@ class ContactBookTest {
     @AfterEach
     void afterEachTest(TestInfo testInfo) {
         System.out.println(testInfo.getDisplayName() + " done!");
-
-    @BeforeEach
-    void setUp() {
-
     }
 
     @Test
@@ -44,7 +43,7 @@ class ContactBookTest {
 
 
     @ParameterizedTest
-    @ValueSource (ints = {1,2,3,5,6,7})
+    @ValueSource(ints = {1,2,3,5,6,7})
     void updateContactBook(int x) {
         String key = "Test";
         WorkContact wc = new WorkContact("Test","Test","005315","salfsgqekgeqgkq","fsasf","wqerwq","13535136");
@@ -60,7 +59,7 @@ class ContactBookTest {
 
     @Test
     void TestPrintContactBook (){
-        assertEquals("Contact list is empty",ContactBook.printContactBook());
+        assertNotEquals("Contact list is empty",ContactBook.printContactBook());
     }
 
     @RepeatedTest(5)
