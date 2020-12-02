@@ -67,16 +67,27 @@ public class ContactBook {
         }
     }
 
-    public static void printContactBook(){
-        MainMenu.workContactHashMap.forEach((key, value) -> System.out.println("\n" +
-                                                                        "Firstname: " + value.getFirstName() + "\n" +
-                                                                        "Lastname: " + value.getLastName() + "\n" +
-                                                                        "Phone number private: " + value.getPhoneNumber() + "\n" +
-                                                                        "Phone Number Work: " + value.getJobPhoneNumber() + "\n" +
-                                                                        "Email-Address: " + value.getEmail() + "\n" +
-                                                                        "Company: " + value.getCompany() + "\n" +
-                                                                        "Job title: " + value.getTitle() + "\n" ));
+    public static String printContactBook(){
 
+        String errorMessage = "Contact list is empty";
+
+        if(MainMenu.workContactHashMap != null) {
+
+        MainMenu.workContactHashMap.forEach((key, value) -> System.out.println("\n" +
+                "Firstname: " + value.getFirstName() + "\n" +
+                "Lastname: " + value.getLastName() + "\n" +
+                "Phone number private: " + value.getPhoneNumber() + "\n" +
+                "Phone Number Work: " + value.getJobPhoneNumber() + "\n" +
+                "Email-Address: " + value.getEmail() + "\n" +
+                "Company: " + value.getCompany() + "\n" +
+                "Job title: " + value.getTitle() + "\n"));
+
+        } else {
+
+            System.out.println(errorMessage);
+            return errorMessage;
+        }
+        return null;
     }
 
     public static void addWorkContactToContactBook(String firstName,String lastName, String phoneNumber,
@@ -98,5 +109,7 @@ public class ContactBook {
         System.out.println(searchContact("Penis"));
 
     }
-}
+
+
+
 

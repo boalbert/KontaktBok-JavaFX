@@ -83,6 +83,7 @@ public class MainMenu extends Application {
         });
 
 
+
         menuBar.getMenus().addAll(fileMenu);
         menuBar.setMaxWidth(600);
 

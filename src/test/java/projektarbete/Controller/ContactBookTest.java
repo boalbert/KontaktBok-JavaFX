@@ -1,21 +1,22 @@
 package projektarbete.Controller;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-import projektarbete.Main.Main;
+import org.junit.jupiter.api.*;
 import projektarbete.Main.MainMenu;
-import projektarbete.Model.Contact;
-import projektarbete.Model.WorkContact;
 
 import javax.naming.ldap.Control;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ContactBookTest {
 
-    WorkContact wc = new WorkContact("Test","Test","005315","salfsgqekgeqgkq","fsasf","wqerwq","13535136");
+
+    @BeforeAll
+    static void beforeAllTest() {
+        System.out.println("Starting tests of Getter methods from Class WorkContact");
+    }
+
+    @AfterEach
+    void afterEachTest(TestInfo testInfo) {
+        System.out.println(testInfo.getDisplayName() + " done!");
 
     @BeforeEach
     void setUp() {
@@ -58,13 +59,20 @@ class ContactBookTest {
     }
 
     @Test
-    void printContactBook() {
-
+    void TestPrintContactBook (){
+        assertEquals("Contact list is empty",ContactBook.printContactBook());
     }
 
-    @Test
-    void addWorkContactToContactBook() {
+    @RepeatedTest(5)
+    void addWorkContactToContactBook () {
+        ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
+        assertEquals("1234", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
 
+        }
+
+    @AfterAll
+    static void afterAllTest() {
+        System.out.println("Tests of Getter methods from Class WorkContact finished");
+    }
 
     }
-}
