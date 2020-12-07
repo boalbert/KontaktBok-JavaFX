@@ -1,13 +1,4 @@
 {
-  "rut": {
-    "company": "ASdasd",
-    "title": "MLT",
-    "jobPhoneNumber": "123123123",
-    "firstName": "rut",
-    "lastName": "Andersson",
-    "phoneNumber": "123213",
-    "email": "rut@gmail.com"
-  },
   "Joakim": {
     "company": "l",
     "title": "l",
@@ -35,13 +26,13 @@
     "phoneNumber": "0730550834",
     "email": "andersson.albert@gmail.com"
   },
-  "Test2": {
-    "company": "p",
-    "title": "p",
-    "jobPhoneNumber": "p",
-    "firstName": "Test2",
-    "lastName": "Efternamntest",
-    "phoneNumber": "p",
-    "email": "p"
+  "Amanda": {
+    "company": "Östra",
+    "title": "SSK",
+    "jobPhoneNumber": "112",
+    "firstName": "Amanda",
+    "lastName": "Pihl",
+    "phoneNumber": "087130129",
+    "email": "ssk@sjukhuset.tk"
   }
 }

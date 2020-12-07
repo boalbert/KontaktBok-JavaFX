@@ -5,11 +5,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
-class ioHandlingTest {
+class IoHandlingTest {
 
 
     @Test
@@ -20,7 +18,7 @@ class ioHandlingTest {
     @Order(1)
     @Test
     void checkIfFileExists() {
-        ioHandling.checkIfFileExists("src/test/java/projektarbete/data/testData.json");
+        IoHandling.checkIfFileExists("src/test/java/projektarbete/data/testData.json");
 
     }
 

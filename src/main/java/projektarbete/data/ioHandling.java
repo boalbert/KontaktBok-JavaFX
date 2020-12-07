@@ -14,7 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-public class ioHandling {
+public class IoHandling {
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
