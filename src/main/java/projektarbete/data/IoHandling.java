@@ -21,7 +21,7 @@ public class IoHandling {
     /**
      *
      * @param filepath to .json file
-     * @return true if file found / false file not found
+     * @return true if file found / false if file not found
      */
     public static boolean checkIfFileExists(String filepath) {
         System.out.println("Searching for .json-file...");
@@ -45,8 +45,7 @@ public class IoHandling {
 
 
     /**
-     * Should execute when we start the program
-     *
+     * Executes when we start the program.
      * @return HashMap populated from .json-file.
      */
     public static HashMap<String, WorkContact> loadHashMapFromJson(String filepath) {
@@ -56,10 +55,7 @@ public class IoHandling {
             }.getType();
 
 
-            try (FileReader fileReader = new FileReader(filepath)
-
-
-            ) {
+            try (FileReader fileReader = new FileReader(filepath)) {
 
                 // Load HashMap from FileReader via Gson, we use Type parameter to specify what data we're loading
                 HashMap<String, WorkContact> loadedWorkContacts = gson.fromJson(fileReader, typeHashMap);
@@ -73,6 +69,7 @@ public class IoHandling {
                 }
 
                 return loadedWorkContacts;
+
             } catch (IOException e) {
                 System.out.println("File was not found... throwing IOException");
                 e.printStackTrace();
@@ -80,26 +77,20 @@ public class IoHandling {
 
         } else {
             System.out.println("Starting from scratch with an empty HashMap");
-
         }
-
         return new HashMap<>();
     }
 
 
     /**
-     * Should be executed on closing the program.
-     *
+     * Executes when we exit the program.
      * @param saveHashMap to .json file
      */
     public static void saveHashMapToJson(HashMap<String, WorkContact> saveHashMap, String filepath) {
 
         try (FileWriter fileWriter = new FileWriter(filepath)) {
-
-
             gson.toJson(saveHashMap, fileWriter);
             System.out.println("Writing updated HashMap to .json.");
-
 
         } catch (IOException e) {
             System.out.println("Writing to .json failed.");

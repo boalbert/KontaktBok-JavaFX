@@ -14,28 +14,25 @@ class IoHandlingTest {
     static String correctFilePath = "src/test/java/projektarbete/data/testData.json";
     static String wrongFilePath = "src/test/java/projektarbete/data/wrongFilePath.json";
 
+    /**
+     * Deletes test .json-file before and after tests is executed
+     */
     @BeforeAll
-    static void beforeAllTest_DeleteTestFiles() {
-
-        File deleteTestFile = new File(correctFilePath);
-        if (deleteTestFile.delete()) {
-            System.out.println(correctFilePath + " has been deleted before running tests.");
-        } else {
-            System.out.println(correctFilePath + " not found, nothing do delete!");
-        }
-
-    }
-
     @AfterAll
-    static void AfterAllTest_DeleteTestFiles() {
+    static void before_And_AfterAllTest_DeleteTestFiles() {
 
-        File f = new File(correctFilePath);
-        if (f.delete()) {
-            System.out.println(correctFilePath + " has been deleted after running tests.");
-        } else {
-            System.out.println(correctFilePath + " not found, nothing do delete!");
+        try {
+            File deleteTestFile = new File(correctFilePath);
+            if (deleteTestFile.delete()) {
+                System.out.println(correctFilePath + " has been deleted before/after running tests.");
+            } else {
+                System.out.println(correctFilePath + " not found, nothing do delete!");
+            }
+
+        } catch(NullPointerException e) {
+            System.out.println("Caught NullPointerException - check if file path is correct / not null");
+            e.printStackTrace();
         }
-
     }
 
     @Test()
@@ -50,6 +47,11 @@ class IoHandlingTest {
 
     }
 
+    /**
+     * Creates a new HashMap, adds one item and then saves it as .json.
+     * Uses checkIfFileExists() to see that .json-file has been created at correct path
+     * Uses loadHashMapFromJson() to make sure that the HashMap was not empty
+     */
     @Test
     @Order(1)
     void saveHasMapToJson_WithPopulatedHashMap_SavesCorrectly() {
@@ -62,6 +64,17 @@ class IoHandlingTest {
         assertTrue(IoHandling.checkIfFileExists(correctFilePath));
         assertFalse(IoHandling.loadHashMapFromJson(correctFilePath).isEmpty());
 
+    }
+
+    /**
+     * Asserts that the method returns boolean when file found/not found.
+     * Order(3) because Test(2) should save a file to the correct path.
+     */
+    @Test
+    @Order(3)
+    void checkIfFileExists() {
+        assertTrue(IoHandling.checkIfFileExists(correctFilePath));
+        assertFalse(IoHandling.checkIfFileExists(wrongFilePath));
     }
 
 }
