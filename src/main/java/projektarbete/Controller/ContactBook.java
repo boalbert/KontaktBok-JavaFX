@@ -2,7 +2,6 @@ package projektarbete.Controller;
 import projektarbete.Main.MainMenu;
 import projektarbete.Model.WorkContact;
 
-import java.util.HashMap;
 
 public class ContactBook {
 
@@ -72,8 +71,9 @@ public class ContactBook {
     public static String printContactBook() {
 
         String errorMessage = "Contact list is empty";
+        String message = "Contact List printed";
 
-        if (MainMenu.workContactHashMap != null) {
+        if (!MainMenu.workContactHashMap.isEmpty()) {
             MainMenu.workContactHashMap.forEach((key, value) -> System.out.println("\n" +
                     "Firstname: " + value.getFirstName() + "\n" +
                     "Lastname: " + value.getLastName() + "\n" +
@@ -83,12 +83,11 @@ public class ContactBook {
                     "Company: " + value.getCompany() + "\n" +
                     "Job title: " + value.getTitle() + "\n"));
 
-        } else {
+            return message;
 
-            System.out.println(errorMessage);
+        } else {
             return errorMessage;
         }
-        return null;
     }
 
     public static void addWorkContactToContactBook(String firstName, String lastName, String phoneNumber,

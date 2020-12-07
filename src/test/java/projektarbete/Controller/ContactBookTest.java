@@ -59,23 +59,24 @@ class ContactBookTest {
     }
 
     @Test
-    void printContactBookVerifyIfErrorMessageNotShowsIfHashMapIsNotEmpty (){
-        assertNotEquals("Contact list is empty",printContactBook());
+    void printContactBookVerifyIfErrorMessageNotShowsIfHashMapIsNotEmpty () {
+        assertEquals("Contact List printed", printContactBook());
     }
+
     @Test
     void printContactBookVerifyIfErrorMessageShowsIfHashMapIsEmpty (){
         //empty HashMap
-        MainMenu.workContactHashMap = null;
+        MainMenu.workContactHashMap.clear();
         assertEquals("Contact list is empty",printContactBook());
     }
 
-    @RepeatedTest(5)
+   @Test
     void addWorkContactToContactBookThenVerifyThatContactsPhoneNumberIsInHashMap () {
         ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
         assertEquals("1234", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
         }
 
-    @RepeatedTest(5)
+    @Test
     void addWorkContactToContactBookThenVerifyThatWrongContactsLastNameIsNotInHashMap () {
         ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
         assertNotEquals("notTheRightName", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
