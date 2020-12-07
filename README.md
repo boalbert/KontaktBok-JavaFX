@@ -23,7 +23,7 @@ Klona repository och köra programmet från terminalen eller i en IDE (till ex. 
 
 Unit-test går att köra via kommando `mvn test`.
 
-<u>Möjlighet 2:</u> **Tanka ner projektet från Docker Hub**
+<u>Alternativ 2:</u> **Tanka ner projektet från Docker Hub**
 
 # Licens 
 
