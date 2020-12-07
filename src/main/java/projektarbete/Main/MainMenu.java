@@ -17,15 +17,14 @@ import projektarbete.Controller.ContactBook;
 
 import java.util.ArrayList;
 
-import projektarbete.Controller.ContactBook;
 import projektarbete.Model.WorkContact;
-import projektarbete.data.ioHandling;
+import projektarbete.data.IoHandling;
 
 import java.util.HashMap;
 
 public class MainMenu extends Application {
 
-    public static HashMap<String, WorkContact> workContactHashMap = ioHandling.loadHashMapFromJson("src/main/java/projektarbete/data/workcontacs.json");
+    public static HashMap<String, WorkContact> workContactHashMap = IoHandling.loadHashMapFromJson("src/main/java/projektarbete/data/workcontacs.json");
     private static final String filepath = "src/main/java/projektarbete/data/workcontacs.json";
 
     public static void main(String[] args) {
@@ -33,7 +32,7 @@ public class MainMenu extends Application {
         launch(args);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            ioHandling.saveHashMapToJson(workContactHashMap,filepath);
+            IoHandling.saveHashMapToJson(workContactHashMap,filepath);
             System.out.println("Exiting program.");
         }));
     }
@@ -78,7 +77,7 @@ public class MainMenu extends Application {
         exitMenu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                ioHandling.saveHashMapToJson(workContactHashMap, filepath);
+                IoHandling.saveHashMapToJson(workContactHashMap, filepath);
                 stage.close();
             }
         });

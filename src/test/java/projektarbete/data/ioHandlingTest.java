@@ -5,12 +5,10 @@ import projektarbete.Model.WorkContact;
 import java.io.File;
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 
-class ioHandlingTest {
+class IoHandlingTest {
 
     static String correctFilePath = "src/test/java/projektarbete/data/testData.json";
     static String wrongFilePath = "src/test/java/projektarbete/data/wrongFilePath.json";
@@ -67,9 +65,14 @@ class ioHandlingTest {
     }
 
     @Test
+<<<<<<< HEAD
     void loadHashMapFromJson_WithWrongFilePath_ReturnsEmptyHashMap() {
 
         assertTrue(ioHandling.loadHashMapFromJson(wrongFilePath).isEmpty());
+=======
+    void checkIfFileExists() {
+        IoHandling.checkIfFileExists("src/test/java/projektarbete/data/testData.json");
+>>>>>>> dev/ioHandlingTests
 
     }
 

@@ -1,13 +1,4 @@
 {
-  "rut": {
-    "company": "ASdasd",
-    "title": "MLT",
-    "jobPhoneNumber": "123123123",
-    "firstName": "rut",
-    "lastName": "Andersson",
-    "phoneNumber": "123213",
-    "email": "rut@gmail.com"
-  },
   "Joakim": {
     "company": "l",
     "title": "l",
@@ -26,6 +17,7 @@
     "phoneNumber": "13123",
     "email": "albert@gmail.com"
   },
+<<<<<<< HEAD
   "Test2": {
     "company": "p",
     "title": "p",
@@ -34,5 +26,24 @@
     "lastName": "Efternamntest",
     "phoneNumber": "p",
     "email": "p"
+=======
+  "Casper": {
+    "company": "MLT",
+    "title": "Admin",
+    "jobPhoneNumber": "031-23132",
+    "firstName": "Casper",
+    "lastName": "Anderson",
+    "phoneNumber": "0730550834",
+    "email": "andersson.albert@gmail.com"
+  },
+  "Amanda": {
+    "company": "Östra",
+    "title": "SSK",
+    "jobPhoneNumber": "112",
+    "firstName": "Amanda",
+    "lastName": "Pihl",
+    "phoneNumber": "087130129",
+    "email": "ssk@sjukhuset.tk"
+>>>>>>> dev/ioHandlingTests
   }
 }
