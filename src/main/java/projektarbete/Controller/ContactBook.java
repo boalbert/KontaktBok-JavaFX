@@ -68,6 +68,10 @@ public class ContactBook {
         }
     }
 
+    /** Prints out the contact list
+     *
+     * @return message if printout was done or if errormessage when Hasmap is empty
+     */
     public static String printContactBook() {
 
         String errorMessage = "Contact list is empty";
@@ -90,6 +94,19 @@ public class ContactBook {
         }
     }
 
+    /**
+     * adds a new work contact to the HashMap
+     *
+     * Input:
+     * @param firstName     First name of the contact
+     * @param lastName      Last name of the contact
+     * @param phoneNumber   Phone number of the contact
+     * @param email         Email of the contact
+     * @param company       company name of company the contact is at
+     * @param title         work tile  of the contact
+     * @param jobPhoneNumber work related phone number of the contact
+     */
+
     public static void addWorkContactToContactBook(String firstName, String lastName, String phoneNumber,
                                                    String email, String company, String title, String jobPhoneNumber) {
         //initiera ny objekt workContact
@@ -99,17 +116,7 @@ public class ContactBook {
 
     }
 
-    //adding psvm for testing purpose
-    public static void main(String[] args) {
-        addWorkContactToContactBook("Jannis", "Mueller", "12345", "jannis@test.de", "Senab", "monkey", "1223");
-        addWorkContactToContactBook("Albert", "Andersson", "43423", "alber@test.se", "VetInte", "VD", "244234");
-        addWorkContactToContactBook("Joakim", "liden", "0876", "joakim@test.com", "DontKnow", "teamleader", "44234");
-        addWorkContactToContactBook("Casper", "ckokealot", "93837", "ckokealot@choke.se", "Hell Production", "stagehand", "8765453");
 
-        System.out.println(searchContact("casper"));
-
-
-    }
 }
 
 

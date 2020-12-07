@@ -31,6 +31,17 @@ public class WorkContact extends Contact {
         this.jobPhoneNumber = jobPhoneNumber;
     }
 
+    /**
+     * Constructor with following parameters:
+     *
+     * @param firstName     First name of the contact
+     * @param lastName      Last name of the contact
+     * @param phoneNumber   Phone number of the contact
+     * @param email         Email of the contact
+     * @param company       company name of company the contact is at
+     * @param title         work tile  of the contact
+     * @param jobPhoneNumber work related phone number of the contact
+     **/
     public WorkContact(String firstName, String lastName, String phoneNumber, String email, String company, String title, String jobPhoneNumber) {
         super(firstName, lastName, phoneNumber, email);
         this.company = company;
