@@ -40,8 +40,6 @@ public class MainMenu extends Application {
     @Override
     public void start(Stage stage) {
 
-        ContactBook.printContactBook();
-
         BorderPane mainBorderPane = new BorderPane();
         mainBorderPane.setMinSize(600, 400);
         TextArea textArea = new TextArea();
