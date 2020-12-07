@@ -1,0 +1,20 @@
+{
+  "Lars": {
+    "company": "MVC",
+    "title": "Lokalvårdare",
+    "jobPhoneNumber": "",
+    "firstName": "Lars",
+    "lastName": "Rippe",
+    "phoneNumber": "0982318",
+    "email": "lars@mvc.se"
+  },
+  "Bo": {
+    "company": "ITHS",
+    "title": "Student",
+    "jobPhoneNumber": "0128377",
+    "firstName": "Bo",
+    "lastName": "Andersson",
+    "phoneNumber": "0723921",
+    "email": "bo@iths.se"
+  }
+}
