@@ -1,70 +1,11 @@
 {
-<<<<<<< HEAD
-=======
-  "rut": {
-    "company": "ASdasd",
-    "title": "MLT",
-    "jobPhoneNumber": "123123123",
-    "firstName": "rut",
+  "Bo": {
+    "company": "MLT",
+    "title": "Admin",
+    "jobPhoneNumber": "0123123",
+    "firstName": "Bo",
     "lastName": "Andersson",
-    "phoneNumber": "123213",
-    "email": "rut@gmail.com"
-  },
-  "Jannis": {
-    "company": "Senab",
-    "title": "PK",
-    "jobPhoneNumber": "0723068922",
-    "firstName": "Jannis",
-    "lastName": "Mueller",
-    "phoneNumber": "0723068922",
-    "email": "jannis.mueller@hotmail.de"
-  },
->>>>>>> bfc7538d3732f39e518a6c7b4be1ee6acc5f76d9
-  "Joakim": {
-    "company": "l",
-    "title": "l",
-    "jobPhoneNumber": "l",
-    "firstName": "Joakim",
-    "lastName": "l",
-    "phoneNumber": "l",
-    "email": "l"
-  },
-  "Hello": {
-    "company": "MLT",
-    "title": "Admin",
-    "jobPhoneNumber": "213123",
-    "firstName": "Hello",
-    "lastName": "Helloefternamn",
-    "phoneNumber": "13123",
-    "email": "albert@gmail.com"
-  },
-<<<<<<< HEAD
-  "Test2": {
-    "company": "p",
-    "title": "p",
-    "jobPhoneNumber": "p",
-    "firstName": "Test2",
-    "lastName": "Efternamntest",
-    "phoneNumber": "p",
-    "email": "p"
-=======
-  "Casper": {
-    "company": "MLT",
-    "title": "Admin",
-    "jobPhoneNumber": "031-23132",
-    "firstName": "Casper",
-    "lastName": "Anderson",
-    "phoneNumber": "0730550834",
-    "email": "andersson.albert@gmail.com"
-  },
-  "Amanda": {
-    "company": "Östra",
-    "title": "SSK",
-    "jobPhoneNumber": "112",
-    "firstName": "Amanda",
-    "lastName": "Pihl",
-    "phoneNumber": "087130129",
-    "email": "ssk@sjukhuset.tk"
->>>>>>> dev/ioHandlingTests
+    "phoneNumber": "073040403",
+    "email": "bo@gmail.com"
   }
 }
