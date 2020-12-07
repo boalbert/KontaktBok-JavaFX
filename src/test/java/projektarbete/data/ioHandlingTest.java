@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import projektarbete.Model.WorkContact;
 import java.io.File;
 import java.util.HashMap;
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
@@ -13,12 +14,11 @@ class IoHandlingTest {
     static String correctFilePath = "src/test/java/projektarbete/data/testData.json";
     static String wrongFilePath = "src/test/java/projektarbete/data/wrongFilePath.json";
 
-
     @BeforeAll
-    static void beforeAllTest_DeleteTestFiles(){
+    static void beforeAllTest_DeleteTestFiles() {
 
         File deleteTestFile = new File(correctFilePath);
-        if(deleteTestFile.delete()) {
+        if (deleteTestFile.delete()) {
             System.out.println(correctFilePath + " has been deleted before running tests.");
         } else {
             System.out.println(correctFilePath + " not found, nothing do delete!");
@@ -27,10 +27,10 @@ class IoHandlingTest {
     }
 
     @AfterAll
-    static void AfterAllTest_DeleteTestFiles(){
+    static void AfterAllTest_DeleteTestFiles() {
 
         File f = new File(correctFilePath);
-        if(f.delete()) {
+        if (f.delete()) {
             System.out.println(correctFilePath + " has been deleted after running tests.");
         } else {
             System.out.println(correctFilePath + " not found, nothing do delete!");
@@ -44,9 +44,9 @@ class IoHandlingTest {
 
         HashMap<String, WorkContact> emptyHashMap = new HashMap<>();
 
-        ioHandling.saveHashMapToJson(emptyHashMap,correctFilePath);
+        IoHandling.saveHashMapToJson(emptyHashMap, correctFilePath);
 
-        assertTrue(ioHandling.checkIfFileExists(correctFilePath));
+        assertTrue(IoHandling.checkIfFileExists(correctFilePath));
 
     }
 
@@ -54,37 +54,14 @@ class IoHandlingTest {
     @Order(1)
     void saveHasMapToJson_WithPopulatedHashMap_SavesCorrectly() {
         HashMap<String, WorkContact> populatedHashMap = new HashMap<>();
-        WorkContact workContact = new WorkContact("Firstname","Lastname","Phone","Email","Company","Title","JobPhone");
+        WorkContact workContact = new WorkContact("Firstname", "Lastname", "Phone", "Email", "Company", "Title", "JobPhone");
         populatedHashMap.put("Key", workContact);
 
-        ioHandling.saveHashMapToJson(populatedHashMap,correctFilePath);
+        IoHandling.saveHashMapToJson(populatedHashMap, correctFilePath);
 
-        assertTrue(ioHandling.checkIfFileExists(correctFilePath));
-        assertFalse(ioHandling.loadHashMapFromJson(correctFilePath).isEmpty());
-
-    }
-
-    @Test
-<<<<<<< HEAD
-    void loadHashMapFromJson_WithWrongFilePath_ReturnsEmptyHashMap() {
-
-        assertTrue(ioHandling.loadHashMapFromJson(wrongFilePath).isEmpty());
-=======
-    void checkIfFileExists() {
-        IoHandling.checkIfFileExists("src/test/java/projektarbete/data/testData.json");
->>>>>>> dev/ioHandlingTests
+        assertTrue(IoHandling.checkIfFileExists(correctFilePath));
+        assertFalse(IoHandling.loadHashMapFromJson(correctFilePath).isEmpty());
 
     }
-
-    @Test
-    void checkIfFileExists_ReturnFalseIfNotFound() {
-        assertFalse(ioHandling.checkIfFileExists(wrongFilePath));
-    }
-
-    @Test
-    void checkIfFileExists_ReturnTrueIfFileFound() {
-        assertTrue(ioHandling.checkIfFileExists(correctFilePath));
-    }
-
 
 }
