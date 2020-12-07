@@ -5,7 +5,7 @@ I denne projektarbete skapade vi en kontaktbok där man kan lista kontakter, sö
 
 # Specifikation (ULM av projektet)
 
-​		![labb_3](/Users/jannismuller/Documents/Jannis/It-högskolan/Javautvecklare 2020/Kurser/Javaverktyg och byggmiljöer/Labb 3/labb_3.jpg)
+​		![labb_3](https://tva1.sinaimg.cn/large/0081Kckwgy1glfn96vv7nj30kl0h1abo.jpg)
 
 # Installation
 <u>Möjklighet 1:</u> **Klona repository**
