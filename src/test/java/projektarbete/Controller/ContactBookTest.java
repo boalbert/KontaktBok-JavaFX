@@ -5,8 +5,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import projektarbete.Main.MainMenu;
 
-import javax.naming.ldap.Control;
 import static org.junit.jupiter.api.Assertions.*;
+import static projektarbete.Controller.ContactBook.printContactBook;
+
 import projektarbete.Model.*;
 
 class ContactBookTest {
@@ -14,7 +15,7 @@ class ContactBookTest {
 
     @BeforeAll
     static void beforeAllTest() {
-        System.out.println("Starting tests of Getter methods from Class WorkContact");
+        System.out.println("Starting tests");
     }
 
     @AfterEach
@@ -58,20 +59,30 @@ class ContactBookTest {
     }
 
     @Test
-    void TestPrintContactBook (){
-        assertNotEquals("Contact list is empty",ContactBook.printContactBook());
+    void printContactBookVerifyIfErrorMessageNotShowsIfHashMapIsNotEmpty (){
+        assertNotEquals("Contact list is empty",printContactBook());
+    }
+    @Test
+    void printContactBookVerifyIfErrorMessageShowsIfHashMapIsEmpty (){
+        //empty HashMap
+        MainMenu.workContactHashMap = null;
+        assertEquals("Contact list is empty",printContactBook());
     }
 
     @RepeatedTest(5)
-    void addWorkContactToContactBook () {
+    void addWorkContactToContactBookThenVerifyThatContactsPhoneNumberIsInHashMap () {
         ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
         assertEquals("1234", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
-
         }
 
+    @RepeatedTest(5)
+    void addWorkContactToContactBookThenVerifyThatWrongContactsLastNameIsNotInHashMap () {
+        ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
+        assertNotEquals("notTheRightName", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
+    }
     @AfterAll
     static void afterAllTest() {
-        System.out.println("Tests of Getter methods from Class WorkContact finished");
+        System.out.println("Tests for Class ContactBook finished");
     }
 
 }

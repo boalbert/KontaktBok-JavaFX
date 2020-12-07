@@ -1,4 +1,25 @@
 {
+<<<<<<< HEAD
+=======
+  "rut": {
+    "company": "ASdasd",
+    "title": "MLT",
+    "jobPhoneNumber": "123123123",
+    "firstName": "rut",
+    "lastName": "Andersson",
+    "phoneNumber": "123213",
+    "email": "rut@gmail.com"
+  },
+  "Jannis": {
+    "company": "Senab",
+    "title": "PK",
+    "jobPhoneNumber": "0723068922",
+    "firstName": "Jannis",
+    "lastName": "Mueller",
+    "phoneNumber": "0723068922",
+    "email": "jannis.mueller@hotmail.de"
+  },
+>>>>>>> bfc7538d3732f39e518a6c7b4be1ee6acc5f76d9
   "Joakim": {
     "company": "l",
     "title": "l",
