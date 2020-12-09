@@ -13,7 +13,7 @@ I detta projektarbete skapade vi en kontaktbok där man kan lista kontakter, sö
 
 Klona repository och köra programmet från terminalen eller i en IDE (till ex. Intellji). 
 
-`1. $ git clone https://github.com/boalbert/KontaktBok.git`
+1. `$ git clone https://github.com/boalbert/KontaktBok.git`
 
 2. Compile och kör programet med Maven
 
