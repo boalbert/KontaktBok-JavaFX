@@ -27,6 +27,8 @@ public class MainMenu extends Application {
     public static HashMap<String, WorkContact> workContactHashMap = IoHandling.loadHashMapFromJson(IoHandling.filepath);
 
     public static void main(String[] args) {
+
+        System.out.println("Test webhook!");
         System.out.println(workContactHashMap.keySet());
         launch(args);
 
