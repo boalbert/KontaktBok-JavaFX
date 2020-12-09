@@ -2,13 +2,14 @@ package projektarbete.data;
 
 import org.junit.jupiter.api.*;
 import projektarbete.Model.WorkContact;
+
 import java.io.File;
 import java.util.HashMap;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-
 class IoHandlingTest {
 
     static String correctFilePath = "src/test/java/projektarbete/data/testData.json";
@@ -29,14 +30,18 @@ class IoHandlingTest {
                 System.out.println(correctFilePath + " not found, nothing do delete!");
             }
 
-        } catch(NullPointerException e) {
-            System.out.println("Caught NullPointerException - check if file path is correct / not null");
+        } catch (NullPointerException e) {
+            System.out.println("Caught " + e.toString() + "  - check if file path is correct / not null");
             e.printStackTrace();
         }
     }
 
+    /**
+     * Asserts that saving an empty HashMap works correctly.
+     * FileNotFoundException and IOException is caught inside method.
+     */
     @Test()
-    @Order(2)
+    @Order(3)
     void saveHashMapToJson_WithEmptyHashMap_SavesCorrectly() {
 
         HashMap<String, WorkContact> emptyHashMap = new HashMap<>();
@@ -67,14 +72,27 @@ class IoHandlingTest {
     }
 
     /**
-     * Asserts that the method returns boolean when file found/not found.
-     * Order(3) because Test(2) should save a file to the correct path.
+     * Method should always return a HashMap, even if file is not found.
+     * FileNotFoundException and IOException is caught in method.
      */
     @Test
     @Order(3)
+    void loadHashMapFromJson_NotNull() {
+        assertNotNull(IoHandling.loadHashMapFromJson(correctFilePath));
+        assertNotNull(IoHandling.loadHashMapFromJson(wrongFilePath));
+    }
+
+    /**
+     * Asserts that the method returns boolean when file found/not found.
+     * Order(4) because Test(2) should save a file to the correct path.
+     */
+    @Test
+    @Order(4)
     void checkIfFileExists() {
         assertTrue(IoHandling.checkIfFileExists(correctFilePath));
         assertFalse(IoHandling.checkIfFileExists(wrongFilePath));
     }
 
 }
+
+
