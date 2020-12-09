@@ -85,7 +85,7 @@ public class CreateNewContact extends Application {
                             tfAddCompany.getText(),
                             tfAddTitle.getText(),
                             tfAddJobPhone.getText());
-                } catch (Exception e) {
+                } catch (IllegalArgumentException e) {
                     e.printStackTrace();
                 }
                 ContactBook.printContactBook();

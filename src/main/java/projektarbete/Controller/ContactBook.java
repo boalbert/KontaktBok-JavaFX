@@ -109,7 +109,7 @@ public class ContactBook {
      */
 
     public static void addWorkContactToContactBook(String firstName, String lastName, String phoneNumber,
-                                                   String email, String company, String title, String jobPhoneNumber) throws Exception{
+                                                   String email, String company, String title, String jobPhoneNumber){
         //init of a new workContact object
         WorkContact workContact = new WorkContact(firstName, lastName, phoneNumber, email, company, title, jobPhoneNumber);
 
