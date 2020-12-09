@@ -44,6 +44,7 @@ public class IoHandling {
      * Executes when we start the program.
      * * If file is empty -> Return an empty HashMap
      * * If file not found -> Return an empty HashMap
+     *
      * @return HashMap populated from .json-file.
      */
     public static HashMap<String, WorkContact> loadHashMapFromJson(String filepath) {
@@ -84,6 +85,7 @@ public class IoHandling {
 
     /**
      * Executes when we exit the program.
+     *
      * @param saveHashMap to .json file
      */
     public static void saveHashMapToJson(HashMap<String, WorkContact> saveHashMap, String filepath) {
