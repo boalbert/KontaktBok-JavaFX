@@ -1,6 +1,7 @@
 package projektarbete.Controller;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import projektarbete.Main.MainMenu;
@@ -10,8 +11,8 @@ import static projektarbete.Controller.ContactBook.printContactBook;
 
 import projektarbete.Model.*;
 
-class ContactBookTest {
 
+class ContactBookTest {
 
     @BeforeAll
     static void beforeAllTest() {
@@ -70,14 +71,24 @@ class ContactBookTest {
         assertEquals("Contact list is empty",printContactBook());
     }
 
+    @Test
+    void testFirstNameIsNullWhenAddWorkContactToContactBook() throws Exception {
+        assertThrows(IllegalArgumentException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                ContactBook.addWorkContactToContactBook(null, "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
+            }
+        });
+    }
+
    @Test
-    void addWorkContactToContactBookThenVerifyThatContactsPhoneNumberIsInHashMap () {
+    void addWorkContactToContactBookThenVerifyThatContactsPhoneNumberIsInHashMap () throws Exception {
         ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
         assertEquals("1234", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
         }
 
     @Test
-    void addWorkContactToContactBookThenVerifyThatWrongContactsLastNameIsNotInHashMap () {
+    void addWorkContactToContactBookThenVerifyThatWrongContactsLastNameIsNotInHashMap () throws Exception{
         ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
         assertNotEquals("notTheRightName", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
     }

@@ -75,15 +75,19 @@ public class CreateNewContact extends Application {
         Button addButton = new Button("Add new Contact");
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                ContactBook.addWorkContactToContactBook(
-                        tfAddFirstName.getText(),
-                        tfAddLastName.getText(),
-                        tfAddPhone.getText(),
-                        tfAddEmail.getText(),
-                        tfAddCompany.getText(),
-                        tfAddTitle.getText(),
-                        tfAddJobPhone.getText());
+            public void handle(ActionEvent event)  {
+                try {
+                    ContactBook.addWorkContactToContactBook(
+                            tfAddFirstName.getText(),
+                            tfAddLastName.getText(),
+                            tfAddPhone.getText(),
+                            tfAddEmail.getText(),
+                            tfAddCompany.getText(),
+                            tfAddTitle.getText(),
+                            tfAddJobPhone.getText());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 ContactBook.printContactBook();
                 MainMenu mainMenu = new MainMenu();
                 mainMenu.start(stage);
