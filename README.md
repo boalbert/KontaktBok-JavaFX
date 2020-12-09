@@ -9,7 +9,7 @@ I detta projektarbete skapade vi en kontaktbok där man kan lista kontakter, sö
 
 # Installation
 
-<u>Alternativ 1:</u> **Klona repository**
+**Klona repository**
 
 Klona repository och köra programmet från terminalen eller i en IDE (till ex. Intellji). 
 
@@ -23,7 +23,6 @@ Klona repository och köra programmet från terminalen eller i en IDE (till ex. 
 
 Unit-test går att köra via kommando `mvn test`.
 
-<u>Alternativ 2:</u> **Tanka ner projektet från Docker Hub**
 
 # Licens 
 
