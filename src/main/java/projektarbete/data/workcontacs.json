@@ -1,0 +1,29 @@
+{
+  "Joakim": {
+    "company": "Telia",
+    "title": "Projektledare",
+    "jobPhoneNumber": "072468932",
+    "firstName": "Joakim",
+    "lastName": "Liden",
+    "phoneNumber": "0723068945",
+    "email": "liden@telia.se"
+  },
+  "Casper": {
+    "company": "Hell Production",
+    "title": "Projektledare",
+    "jobPhoneNumber": "072389886",
+    "firstName": "Casper",
+    "lastName": "Konyi",
+    "phoneNumber": "072353738",
+    "email": "c.konyi@hell.com"
+  },
+  "Albert": {
+    "company": "Telia",
+    "title": "VD",
+    "jobPhoneNumber": "0723068922",
+    "firstName": "Albert",
+    "lastName": "Andersson",
+    "phoneNumber": "0723068922",
+    "email": "albert@telia.se"
+  }
+}
