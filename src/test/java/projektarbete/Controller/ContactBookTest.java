@@ -30,6 +30,7 @@ class ContactBookTest {
         MainMenu.workContactHashMap.put(wc.getFirstName(),wc);
         assertNotNull(ContactBook.searchContact("Test"));
         assertNull(ContactBook.searchContact("ingensomheterdethär"));
+        assertEquals("Test",wc.getFirstName());
     }
 
     @Test
@@ -38,7 +39,7 @@ class ContactBookTest {
         MainMenu.workContactHashMap.put(wc.getFirstName(),wc);
         assertNotNull(MainMenu.workContactHashMap.get(wc.getFirstName()));
         ContactBook.removeContact(wc.getFirstName());
-        assertNull(MainMenu.workContactHashMap.get("SkaVaNull"));
+        assertNull(MainMenu.workContactHashMap.get(wc.getFirstName()));
         assertTrue(!MainMenu.workContactHashMap.containsKey(wc.getFirstName()));
         assertFalse(MainMenu.workContactHashMap.containsKey(wc.getFirstName()));
     }
@@ -48,7 +49,7 @@ class ContactBookTest {
     @ValueSource(ints = {1,2,3,5,6,7})
     void updateContactBook(int x) {
         String key = "Test";
-        WorkContact wc = new WorkContact("Test","Test","005315","salfsgqekgeqgkq","fsasf","wqerwq","13535136");
+        WorkContact wc = new WorkContact("Test","Kanot","005315","salfsgqekgeqgkq","fsasf","wqerwq","13535136");
         MainMenu.workContactHashMap.put(wc.getFirstName(), wc);
 
         ContactBook.updateContactBook(x,MainMenu.workContactHashMap.get(key).getFirstName(),"Fungerar");

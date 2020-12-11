@@ -16,12 +16,14 @@
 
     <name>Junit_Labb</name>
     <dependencies>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.4.0</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
@@ -53,6 +55,7 @@
             <version>16-ea+4</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
