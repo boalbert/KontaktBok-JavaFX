@@ -34,7 +34,7 @@ public class SearchContact extends Application {
         GridPane searchGridPane = new GridPane();
         TextArea searchTextArea = new TextArea();
 
-        searchTextArea.setMaxWidth(200);
+        searchTextArea.setMaxWidth(300);
         searchBorderPane.setMinSize(600,400);
 
         searchGridPane.setMinSize(300, 400);
