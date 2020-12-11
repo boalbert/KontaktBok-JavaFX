@@ -1,7 +1,7 @@
 # Kontaktbok 
 ## PROJEKTARBETE | Javaverktyg och byggmiljöer | JU20 | ITHS
 
-I detta projektarbete skapade vi en kontaktbok där man kan lista kontakter, söka efter kontakter, uppdatera kontakter och lägga till nya kontakter. Detta kan användaren välja mellan: Lista, Sök, Uppdatera, Lägg till och Ta bort. Detta kan lagras som en lista i applikationen. Kontaktboken lagras på en jason-fil så att alla kontakter finns kvar mellan körningar av programmet. Använderegräsnittet är byggd i JavaFX.
+I detta projektarbete skapade vi en kontaktbok där man kan lista kontakter, söka efter kontakter, uppdatera kontakter och lägga till nya kontakter. Detta kan användaren välja mellan: Lista, Sök, Uppdatera, Lägg till och Ta bort. Detta kan lagras som en lista i applikationen. Kontaktboken lagras på en json-fil så att alla kontakter finns kvar mellan körningar av programmet. Användaregräsnittet är byggt i JavaFX.
 
 # Specifikation (ULM av projektet)
 
@@ -11,15 +11,13 @@ I detta projektarbete skapade vi en kontaktbok där man kan lista kontakter, sö
 
 **Klona repository**
 
-Klona repository och köra programmet från terminalen eller i en IDE (till ex. Intellji). 
+Klona repository och kör programmet från terminalen eller i en IDE (till ex. Intellji). 
 
 1. `$ git clone https://github.com/boalbert/KontaktBok.git`
 
 2. Compile och kör programet med Maven
 
 `mvn compile`
-
-`mvn javafx:run`
 
 Unit-test går att köra via kommando `mvn test`.
 
