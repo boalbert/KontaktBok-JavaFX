@@ -131,7 +131,6 @@ public class MainMenu extends Application {
             }
         });
 
-
         gridPane.add(addButton, 0,0);
         gridPane.add(searchButton,0,1);
         gridPane.add(removeButton,0,2);
