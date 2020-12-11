@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import projektarbete.Model.WorkContact;
 import projektarbete.data.IoHandling;
 
+import java.util.Collections;
 import java.util.HashMap;
 
 public class MainMenu extends Application {
@@ -48,10 +49,12 @@ public class MainMenu extends Application {
         ListView<String> listView = new ListView();
         listView.setMaxWidth(150);
         ArrayList<String> firstNamesArrayList = new ArrayList(workContactHashMap.keySet());
+        Collections.sort(firstNamesArrayList);
 
 
         ObservableList<String> contactsFromHashMap =
                 FXCollections.observableArrayList(
+
                         firstNamesArrayList
                 );
         listView.setItems(contactsFromHashMap);
