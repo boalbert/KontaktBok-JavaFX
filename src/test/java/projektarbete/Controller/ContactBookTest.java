@@ -60,11 +60,18 @@ class ContactBookTest {
                         MainMenu.workContactHashMap.get("Fungerar").getFirstName() == key);
     }
 
+    /**
+     * tests if error message is not thrown when hashmap is not empty.instead
+     * it should throw the message "Contact List printed"
+     */
     @Test
     void printContactBookVerifyIfErrorMessageNotShowsIfHashMapIsNotEmpty () {
         assertEquals("Contact List printed", printContactBook());
     }
 
+    /**
+     * tests if error message is thrown when hashmap is empty
+     */
     @Test
     void printContactBookVerifyIfErrorMessageShowsIfHashMapIsEmpty (){
         //empty HashMap
@@ -72,6 +79,10 @@ class ContactBookTest {
         assertEquals("Contact list is empty",printContactBook());
     }
 
+    /**
+     * tests if llegalArgumentException is thrown when first name is null
+     * @throws Exception
+     */
     @Test
     void testFirstNameIsNullWhenAddWorkContactToContactBook() throws Exception {
         assertThrows(IllegalArgumentException.class, new Executable() {
@@ -82,12 +93,20 @@ class ContactBookTest {
         });
     }
 
+    /**
+     * Test if an added contact finds in hashmap by checking if phone number is the same
+     * @throws Exception
+     */
    @Test
     void addWorkContactToContactBookThenVerifyThatContactsPhoneNumberIsInHashMap () throws Exception {
         ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
         assertEquals("1234", MainMenu.workContactHashMap.get("Jannis").getPhoneNumber());
         }
 
+    /**
+     * Test if a wrong Name is not to be found in hashmap
+     * @throws Exception
+     */
     @Test
     void addWorkContactToContactBookThenVerifyThatWrongContactsLastNameIsNotInHashMap () throws Exception{
         ContactBook.addWorkContactToContactBook("Jannis", "Mueller", "1234", "jannis@email.de", "senab", "PK", "123456");
