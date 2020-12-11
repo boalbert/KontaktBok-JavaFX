@@ -92,9 +92,6 @@ class IoHandlingTest {
         assertTrue(IoHandling.checkIfFileExists(correctFilePath));
         assertFalse(IoHandling.checkIfFileExists(wrongFilePath));
     }
-
-    // Test webhook again
-
 }
 
 
