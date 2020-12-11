@@ -17,7 +17,7 @@ Klona repository och kör programmet från terminalen eller i en IDE (till ex. I
 
 2. Compile och kör programet med Maven
 
-`mvn compile`
+`mvn javafx:run`
 
 Unit-test går att köra via kommando `mvn test`.
 
