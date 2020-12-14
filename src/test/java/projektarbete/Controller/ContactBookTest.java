@@ -28,9 +28,10 @@ class ContactBookTest {
     void searchContact() {
         WorkContact wc = new WorkContact("Test","Test","005315","salfsgqekgeqgkq","fsasf","wqerwq","13535136");
         MainMenu.workContactHashMap.put(wc.getFirstName(),wc);
+        assertNotNull(MainMenu.workContactHashMap);
         assertNotNull(ContactBook.searchContact("Test"));
         assertNull(ContactBook.searchContact("ingensomheterdethär"));
-        assertEquals("Test",wc.getFirstName());
+        assertEquals("Test" == wc.getFirstName(), wc.getFirstName() == MainMenu.workContactHashMap.get(wc.getFirstName()).getFirstName());
     }
 
     @Test
@@ -53,7 +54,7 @@ class ContactBookTest {
         MainMenu.workContactHashMap.put(wc.getFirstName(), wc);
 
         ContactBook.updateContactBook(x,MainMenu.workContactHashMap.get(key).getFirstName(),"Fungerar");
-        assertNotEquals(wc == MainMenu.workContactHashMap.get(key), wc.getLastName() == "DetSkaInteVaDetHär");
+        assertNotEquals(wc == MainMenu.workContactHashMap.get(key), wc.getLastName() == "FungerarInte");
         // 4  = update - FirstName : Måste vara självständigt eftersom firstName ==  HashMap<Key, WorkContact>()
         ContactBook.updateContactBook(4,key,"Fungerar");
         assertNotEquals(MainMenu.workContactHashMap.get("Fungerar").getFirstName() == "Fungerar",
